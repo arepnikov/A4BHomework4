@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.daftmobile.android4beginners4.robots.viewmodel.ExternalSourceRobotsViewModel
 import com.daftmobile.android4beginners4.robots.viewmodel.LiveDataRobotsViewModel
 import com.daftmobile.android4beginners4.robots.viewmodel.RobotsViewModel
 import kotlinx.android.synthetic.main.activity_robots.*
@@ -16,7 +17,7 @@ class RobotsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_robots)
 
-        viewModel = ViewModelProviders.of(this).get(LiveDataRobotsViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(ExternalSourceRobotsViewModel::class.java)
         viewModel.getRobotList().observe(this, Observer {
             robotTextView.text = it
         })

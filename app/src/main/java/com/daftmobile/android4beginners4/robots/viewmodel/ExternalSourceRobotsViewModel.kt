@@ -12,5 +12,8 @@ class ExternalSourceRobotsViewModel: ViewModel(), RobotsViewModel {
 
     override fun getRobotList(): LiveData<String> = mutableLiveData
 
-    override fun addRobot() = robotDataSource.addNew()
+    override fun addRobot() {
+        robotDataSource.addNew()
+        mutableLiveData.value = robotDataSource.getRobots().toString()
+    }
 }
