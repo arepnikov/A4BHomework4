@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/robots_order_asc"
-        android:title="@string/robots_order_asc" />
-    <item android:id="@+id/robots_order_desc"
-        android:title="@string/robots_order_desc" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item android:id="@+id/sort_action"
+        android:title="@string/sort_action"
+        android:icon="@drawable/ic_sort_black_24dp"
+        app:showAsAction="ifRoom">
+        <!-- "file" submenu -->
+        <menu>
+            <item android:id="@+id/robots_order_asc"
+                android:title="@string/robots_order_asc" />
+            <item android:id="@+id/robots_order_desc"
+                android:title="@string/robots_order_desc"/>
+        </menu>
+    </item>
 </menu>
