@@ -5,10 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.daftmobile.android4beginners4.robots.model.ListRobotsDataSource
 
-class ExternalSourceRobotsViewModel: ViewModel(), RobotsViewModel {
+class ExternalSourceRobotsViewModel(
+        private val robotDataSource: ListRobotsDataSource = ListRobotsDataSource()
+) : ViewModel(), RobotsViewModel {
 
     private val mutableLiveData: MutableLiveData<String> = MutableLiveData()
-    private val robotDataSource = ListRobotsDataSource()
 
     override fun getRobotList(): LiveData<String> = mutableLiveData
 
