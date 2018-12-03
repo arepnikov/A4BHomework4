@@ -1,6 +1,8 @@
 package com.daftmobile.android4beginners4.robots
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -25,6 +27,12 @@ class RobotsActivity : AppCompatActivity() {
         addRobotFab.setOnClickListener {
             addNewItem()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.robot_sort_menu, menu)
+        return true
     }
 
     private fun addNewItem() {
