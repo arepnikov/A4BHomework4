@@ -3,6 +3,7 @@ package com.daftmobile.android4beginners4.robots
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -33,6 +34,21 @@ class RobotsActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.robot_sort_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.robots_order_asc -> {
+                showMsgDialog(this, "ASC")
+                true
+            }
+            R.id.robots_order_desc -> {
+                showMsgDialog(this, "DESC")
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
     }
 
     private fun addNewItem() {
