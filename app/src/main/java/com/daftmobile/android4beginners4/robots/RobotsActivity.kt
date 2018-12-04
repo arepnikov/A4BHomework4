@@ -6,11 +6,8 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.daftmobile.android4beginners4.robots.viewmodel.ExternalSourceRobotsViewModel
-import com.daftmobile.android4beginners4.robots.viewmodel.LiveDataRobotsViewModel
-import com.daftmobile.android4beginners4.robots.viewmodel.RobotsViewModel
 import kotlinx.android.synthetic.main.activity_robots.*
 
 class RobotsActivity : AppCompatActivity() {

@@ -3,7 +3,6 @@ package com.daftmobile.android4beginners4.robots.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-//import com.daftmobile.android4beginners4.robots.model.ListRobotsDataSource
 import com.daftmobile.android4beginners4.robots.model.SortableListRobotsDataSource
 
 class ExternalSourceRobotsViewModel(
