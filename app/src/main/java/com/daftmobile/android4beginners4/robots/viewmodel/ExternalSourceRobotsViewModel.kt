@@ -10,16 +10,29 @@ class ExternalSourceRobotsViewModel(
         private val robotDataSource: SortableListRobotsDataSource = SortableListRobotsDataSource()
 ) : ViewModel(), RobotsViewModel, SortableViewModel {
 
-    override fun isAscOrder() = !robotDataSource.isRevertedOrder()
-    override fun setAscOrder() = robotDataSource.setAscOrder()
-    override fun setDescOrder() = robotDataSource.setDescOrder()
-
     private val mutableLiveData: MutableLiveData<String> = MutableLiveData()
 
     override fun getRobotList(): LiveData<String> = mutableLiveData
 
     override fun addRobot() {
         robotDataSource.addNew()
+        updateRobotList()
+    }
+
+    override fun isAscOrder() = !robotDataSource.isRevertedOrder()
+
+    override fun setAscOrder() {
+        robotDataSource.setAscOrder()
+        updateRobotList()
+    }
+
+    override fun setDescOrder() {
+        robotDataSource.setDescOrder()
+        updateRobotList()
+    }
+
+    private fun updateRobotList() {
         mutableLiveData.value = robotDataSource.getRobots().joinToString("\n")
     }
+
 }

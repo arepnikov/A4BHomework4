@@ -49,10 +49,12 @@ class RobotsActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.robots_order_asc -> {
                 item.isChecked = true
+                viewModel.setAscOrder()
                 true
             }
             R.id.robots_order_desc -> {
                 item.isChecked = true
+                viewModel.setDescOrder()
                 true
             }
             else -> super.onOptionsItemSelected(item)
