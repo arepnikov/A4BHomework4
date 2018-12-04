@@ -9,10 +9,12 @@
         app:showAsAction="ifRoom">
         <!-- "file" submenu -->
         <menu>
-            <item android:id="@+id/robots_order_asc"
-                android:title="@string/robots_order_asc" />
-            <item android:id="@+id/robots_order_desc"
-                android:title="@string/robots_order_desc"/>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/robots_order_asc"
+                    android:title="@string/robots_order_asc" />
+                <item android:id="@+id/robots_order_desc"
+                    android:title="@string/robots_order_desc"/>
+            </group>
         </menu>
     </item>
 </menu>

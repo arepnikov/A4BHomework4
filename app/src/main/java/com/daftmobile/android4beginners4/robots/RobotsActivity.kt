@@ -14,7 +14,7 @@ import com.daftmobile.android4beginners4.robots.viewmodel.RobotsViewModel
 import kotlinx.android.synthetic.main.activity_robots.*
 
 class RobotsActivity : AppCompatActivity() {
-    private lateinit var viewModel: RobotsViewModel
+    private lateinit var viewModel: ExternalSourceRobotsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +33,26 @@ class RobotsActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.robot_sort_menu, menu)
+
+        val checkedItemId =    if (viewModel.isAscOrder())
+                                        R.id.robots_order_asc
+                                    else
+                                        R.id.robots_order_desc
+
+        val checkedItem = menu.findItem((checkedItemId))
+        checkedItem.isChecked = true
+
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.robots_order_asc -> {
-                showMsgDialog(this, "ASC")
+                item.isChecked = true
                 true
             }
             R.id.robots_order_desc -> {
-                showMsgDialog(this, "DESC")
+                item.isChecked = true
                 true
             }
             else -> super.onOptionsItemSelected(item)
